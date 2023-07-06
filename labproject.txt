@@ -1,0 +1,229 @@
+create database lab;
+
+CREATE SCHEMA student;
+
+CREATE TABLE Student.tblParents (
+    ->     parent_id INT PRIMARY KEY,
+    ->     parent_name VARCHAR(50),
+    ->     city VARCHAR(50),
+    ->     age INT,
+    ->     annual_income DECIMAL(10, 2),
+    ->     occupation VARCHAR(50),
+    ->     email_id VARCHAR(100)
+    -> );
+
+INSERT INTO Student.tblParents (parent_id, parent_name, city, age, annual_income, occupation, email_id)
+    -> VALUES
+    -> (101,'Sandeep','Mumbai',23,56243,'Java developer','sc60975947@gmail.com'),
+    -> (102,'Pradeep','lucknow',53,68243,'Web developer','prad097@gmail.com'),
+    -> (103,'Priya','Ahemdabad',23,265243,'Java developer','jsk685947@gmail.com'),
+    -> (104,'Naoufumy','Ahemdabad',62,265243,'web developer','d47@gmail.com'),
+    -> (105,'Luffy','tokyo',35,856243,'hunter','luffy47@gmail.com'),
+    -> (106,'Priya','Ahemdabad',23,265243,'Java developer','j5947@gmail.com'),
+    -> (107,'Pooja','Mumbai',63,25224,'Java developer','js9478@gmail.com'),
+    -> (108,'Prakash','telanagana',68,855243,'Java developer','jsk6847@gmail.com'),
+    -> (109,'Supriya','chennai',65,489252,'Java developer','jsk635647@gmail.com'),
+    -> (110,'Rengoku','tiruvanthapuram',25,447851,'Java developer','jsk665347@gmail.com'),
+    -> (111,'Lovely','kerala',55,568965,'Java developer','jsk6323547@gmail.com'),
+    -> (112,'Akame','rajasthan',69,895213,'Java developer','jsk68479@gmail.com'),
+    -> (113,'Kirito','rameshwar',33,548543,'Java developer','jsk594760@gmail.com'),
+    -> (114,'Dinesh','rampur',42,946443,'Java developer','jsk658947@gmail.com'),
+    -> (115,'Savita','balasore',23,655243,'Java developer','jsk59789@gmail.com'),
+    -> (116,'Sahil','gopalpur',44,452943,'Java developer','jsk69583947@gmail.com'),
+    -> (117,'Manish','puri',43,159923,'Java developer','jsk68947@gmail.com'),
+    -> (118,'Rakhi','ghaziyabad',37,659243,'Java developer','jsk669947@gmail.com'),
+    -> (119,'Piyali','asam',63,586243,'Java developer','jsk15947@gmail.com'),
+    -> (120,'Neha','bhutan',53,862243,'Java developer','jsk559447@gmail.com')
+    -> ;
+
+
+output:-
+
+mysql> select * from Student.tblParents;
++-----------+-------------+-----------------+------+---------------+----------------+-----------------------+
+| parent_id | parent_name | city            | age  | annual_income | occupation     | email_id              |
++-----------+-------------+-----------------+------+---------------+----------------+-----------------------+
+|       101 | Sandeep     | Mumbai          |   23 |      56243.00 | Java developer | sc60975947@gmail.com  |
+|       102 | Pradeep     | lucknow         |   53 |      68243.00 | Web developer  | prad097@gmail.com     |
+|       103 | Priya       | Ahemdabad       |   23 |     265243.00 | Java developer | jsk685947@gmail.com   |
+|       104 | Naoufumy    | Ahemdabad       |   62 |     265243.00 | web developer  | d47@gmail.com         |
+|       105 | Luffy       | tokyo           |   35 |     856243.00 | hunter         | luffy47@gmail.com     |
+|       106 | Priya       | Ahemdabad       |   23 |     265243.00 | Java developer | j5947@gmail.com       |
+|       107 | Pooja       | Mumbai          |   63 |      25224.00 | Java developer | js9478@gmail.com      |
+|       108 | Prakash     | telanagana      |   68 |     855243.00 | Java developer | jsk6847@gmail.com     |
+|       109 | Supriya     | chennai         |   65 |     489252.00 | Java developer | jsk635647@gmail.com   |
+|       110 | Rengoku     | tiruvanthapuram |   25 |     447851.00 | Java developer | jsk665347@gmail.com   |
+|       111 | Lovely      | kerala          |   55 |     568965.00 | Java developer | jsk6323547@gmail.com  |
+|       112 | Akame       | rajasthan       |   69 |     895213.00 | Java developer | jsk68479@gmail.com    |
+|       113 | Kirito      | rameshwar       |   33 |     548543.00 | Java developer | jsk594760@gmail.com   |
+|       114 | Dinesh      | rampur          |   42 |     946443.00 | Java developer | jsk658947@gmail.com   |
+|       115 | Savita      | balasore        |   23 |     655243.00 | Java developer | jsk59789@gmail.com    |
+|       116 | Sahil       | gopalpur        |   44 |     452943.00 | Java developer | jsk69583947@gmail.com |
+|       117 | Manish      | puri            |   43 |     159923.00 | Java developer | jsk68947@gmail.com    |
+|       118 | Rakhi       | ghaziyabad      |   37 |     659243.00 | Java developer | jsk669947@gmail.com   |
+|       119 | Piyali      | asam            |   63 |     586243.00 | Java developer | jsk15947@gmail.com    |
+|       120 | Neha        | bhutan          |   53 |     862243.00 | Java developer | jsk559447@gmail.com   |
++-----------+-------------+-----------------+------+---------------+----------------+-----------------------+
+
+
+
+
+mysql> UPDATE Student.tblParents SET email_id = 'NA';
+
+
+Output:-
+
+mysql> select * from Student.tblParents;
++-----------+-------------+-----------------+------+---------------+----------------+----------+
+| parent_id | parent_name | city            | age  | annual_income | occupation     | email_id |
++-----------+-------------+-----------------+------+---------------+----------------+----------+
+|       101 | Sandeep     | Mumbai          |   23 |      56243.00 | Java developer | NA       |
+|       102 | Pradeep     | lucknow         |   53 |      68243.00 | Web developer  | NA       |
+|       103 | Priya       | Ahemdabad       |   23 |     265243.00 | Java developer | NA       |
+|       104 | Naoufumy    | Ahemdabad       |   62 |     265243.00 | web developer  | NA       |
+|       105 | Luffy       | tokyo           |   35 |     856243.00 | hunter         | NA       |
+|       106 | Priya       | Ahemdabad       |   23 |     265243.00 | Java developer | NA       |
+|       107 | Pooja       | Mumbai          |   63 |      25224.00 | Java developer | NA       |
+|       108 | Prakash     | telanagana      |   68 |     855243.00 | Java developer | NA       |
+|       109 | Supriya     | chennai         |   65 |     489252.00 | Java developer | NA       |
+|       110 | Rengoku     | tiruvanthapuram |   25 |     447851.00 | Java developer | NA       |
+|       111 | Lovely      | kerala          |   55 |     568965.00 | Java developer | NA       |
+|       112 | Akame       | rajasthan       |   69 |     895213.00 | Java developer | NA       |
+|       113 | Kirito      | rameshwar       |   33 |     548543.00 | Java developer | NA       |
+|       114 | Dinesh      | rampur          |   42 |     946443.00 | Java developer | NA       |
+|       115 | Savita      | balasore        |   23 |     655243.00 | Java developer | NA       |
+|       116 | Sahil       | gopalpur        |   44 |     452943.00 | Java developer | NA       |
+|       117 | Manish      | puri            |   43 |     159923.00 | Java developer | NA       |
+|       118 | Rakhi       | ghaziyabad      |   37 |     659243.00 | Java developer | NA       |
+|       119 | Piyali      | asam            |   63 |     586243.00 | Java developer | NA       |
+|       120 | Neha        | bhutan          |   53 |     862243.00 | Java developer | NA       |
++-----------+-------------+-----------------+------+---------------+----------------+----------+
+
+
+mysql> SELECT COUNT(*) AS count_parents
+    -> FROM Student.tblParents
+    -> WHERE annual_income > 600000;
++---------------+
+| count_parents |
++---------------+
+|             7 |
++---------------+
+
+
+mysql> SELECT *
+    -> FROM Student.tblParents
+    -> WHERE city IN ('Ahemdabad', 'Delhi', 'Mumbai', 'Chennai', 'Bangalore');
++-----------+-------------+-----------+------+---------------+----------------+----------+
+| parent_id | parent_name | city      | age  | annual_income | occupation     | email_id |
++-----------+-------------+-----------+------+---------------+----------------+----------+
+|       101 | Sandeep     | Mumbai    |   23 |      56243.00 | Java developer | NA       |
+|       103 | Priya       | Ahemdabad |   23 |     265243.00 | Java developer | NA       |
+|       104 | Naoufumy    | Ahemdabad |   62 |     265243.00 | web developer  | NA       |
+|       106 | Priya       | Ahemdabad |   23 |     265243.00 | Java developer | NA       |
+|       107 | Pooja       | Mumbai    |   63 |      25224.00 | Java developer | NA       |
+|       109 | Supriya     | chennai   |   65 |     489252.00 | Java developer | NA       |
++-----------+-------------+-----------+------+---------------+----------------+----------+
+
+
+mysql> SELECT *
+    -> FROM Student.tblParents
+    -> WHERE annual_income < 500000 OR age > 45;
++-----------+-------------+-----------------+------+---------------+----------------+----------+
+| parent_id | parent_name | city            | age  | annual_income | occupation     | email_id |
++-----------+-------------+-----------------+------+---------------+----------------+----------+
+|       101 | Sandeep     | Mumbai          |   23 |      56243.00 | Java developer | NA       |
+|       102 | Pradeep     | lucknow         |   53 |      68243.00 | Web developer  | NA       |
+|       103 | Priya       | Ahemdabad       |   23 |     265243.00 | Java developer | NA       |
+|       104 | Naoufumy    | Ahemdabad       |   62 |     265243.00 | web developer  | NA       |
+|       106 | Priya       | Ahemdabad       |   23 |     265243.00 | Java developer | NA       |
+|       107 | Pooja       | Mumbai          |   63 |      25224.00 | Java developer | NA       |
+|       108 | Prakash     | telanagana      |   68 |     855243.00 | Java developer | NA       |
+|       109 | Supriya     | chennai         |   65 |     489252.00 | Java developer | NA       |
+|       110 | Rengoku     | tiruvanthapuram |   25 |     447851.00 | Java developer | NA       |
+|       111 | Lovely      | kerala          |   55 |     568965.00 | Java developer | NA       |
+|       112 | Akame       | rajasthan       |   69 |     895213.00 | Java developer | NA       |
+|       116 | Sahil       | gopalpur        |   44 |     452943.00 | Java developer | NA       |
+|       117 | Manish      | puri            |   43 |     159923.00 | Java developer | NA       |
+|       119 | Piyali      | asam            |   63 |     586243.00 | Java developer | NA       |
+|       120 | Neha        | bhutan          |   53 |     862243.00 | Java developer | NA       |
++-----------+-------------+-----------------+------+---------------+----------------+----------+
+
+
+
+
+CREATE TABLE Company (
+    ->     company_Id INT PRIMARY KEY,
+    ->     company_name VARCHAR(35),
+    ->     company_city VARCHAR(35)
+    -> );
+
+mysql> INSERT INTO Company (company_Id, company_name, company_city)
+    -> VALUES  (1, 'Dominos', 'Los Angeles'),
+    ->     (2, 'Pizza Hut', 'San Francisco'),
+    ->     (3, 'Papa Joins', 'San Diego'),
+    ->     (4, 'Ah Pizz', 'Fremont'),
+    ->     (5, 'Nino Pizza', 'Las Vegas'),
+    ->     (6, 'Pizzeria', 'Boston'),
+    ->     (7, 'Chunck e Cheese', 'Chicago');
+
+Output:-
+
+mysql> select * from company;
++------------+-----------------+---------------+
+| company_Id | company_name    | company_city  |
++------------+-----------------+---------------+
+|          1 | Dominos         | Los Angeles   |
+|          2 | Pizza Hut       | San Francisco |
+|          3 | Papa Joins      | San Diego     |
+|          4 | Ah Pizz         | Fremont       |
+|          5 | Nino Pizza      | Las Vegas     |
+|          6 | Pizzeria        | Boston        |
+|          7 | Chunck e Cheese | Chicago       |
++------------+-----------------+---------------+
+
+
+create table Items(item_id int PRIMARY KEY, item_name varchar(35), units_sold int, company_Id int);
+
+mysql> insert into Items (item_id,item_name,units_sold,company_Id) values
+    -> (1,'Large Pizza',5,2),
+    ->     (2,'Garlic Knots',6,3),
+    ->     (3,'Large Pizza',3,3),
+    ->     (4,'Medium Pizza',8,4),
+    ->     (5,'Breadsticks',7,1),
+    ->     (6,'Medium Pizza',11,1),
+    ->     (7,'Small Pizza',9,6),
+    ->     (8,'Small Pizza',6,7);
+
+Output:-
+
+mysql> select * from items;
++---------+--------------+------------+------------+
+| item_id | item_name    | units_sold | company_Id |
++---------+--------------+------------+------------+
+|       1 | Large Pizza  |          5 |          2 |
+|       2 | Garlic Knots |          6 |          3 |
+|       3 | Large Pizza  |          3 |          3 |
+|       4 | Medium Pizza |          8 |          4 |
+|       5 | Breadsticks  |          7 |          1 |
+|       6 | Medium Pizza |         11 |          1 |
+|       7 | Small Pizza  |          9 |          6 |
+|       8 | Small Pizza  |          6 |          7 |
++---------+--------------+------------+------------+
+
+
+mysql> Select c.company_name,c.company_city,i.item_name,i.units_sold from Company c JOIN Items i where c.company_Id = i.company_Id;
+
+Output:-
+
++-----------------+---------------+--------------+------------+
+| company_name    | company_city  | item_name    | units_sold |
++-----------------+---------------+--------------+------------+
+| Pizza Hut       | San Francisco | Large Pizza  |          5 |
+| Papa Joins      | San Diego     | Garlic Knots |          6 |
+| Papa Joins      | San Diego     | Large Pizza  |          3 |
+| Ah Pizz         | Fremont       | Medium Pizza |          8 |
+| Dominos         | Los Angeles   | Breadsticks  |          7 |
+| Dominos         | Los Angeles   | Medium Pizza |         11 |
+| Pizzeria        | Boston        | Small Pizza  |          9 |
+| Chunck e Cheese | Chicago       | Small Pizza  |          6 |
++-----------------+---------------+--------------+------------+
