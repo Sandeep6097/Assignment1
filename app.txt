@@ -1,0 +1,36 @@
+package agentcrud;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class App {
+    public static void main(String[] args) {
+        Configuration conf = new Configuration().configure().addAnnotatedClass(Agent.class);
+        SessionFactory sessionFactory = conf.buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        // CreateAgent
+        Agent agent = new Agent(1, "agent1@example.com", "1234567890");
+        Agent agent1 = new Agent(2, "agent2@example.com", "2952969855");
+        
+        session.save(agent);
+
+        // getAgent
+        Agent retrievedAgent = session.get(Agent.class, 1);
+        System.out.println("Retrieved Agent: " + retrievedAgent);
+
+        // updateAgent
+        retrievedAgent.setEmail("updated-agent@mail.com");
+        session.update(retrievedAgent);
+
+        // deleteAgent
+        session.delete(retrievedAgent);
+
+        transaction.commit();
+        session.close();
+        sessionFactory.close();
+    }
+}
